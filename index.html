@@ -1,5 +1,73 @@
 <!DOCTYPE html>
-<html>
-<head><title>DataPolitik - Proximamente</title></head>
-<body><h1>DataPolitik - Plataforma Electoral</h1><p>Sitio en construccion.</p></body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataPolitik - Acceso</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+       .login-container { max-width: 400px; margin-top: 100px; }
+       .dashboard-mock { display: none; }
+    </style>
+</head>
+<body>
+    <div id="login-section" class="container login-container border p-4 bg-white shadow-sm rounded">
+        <h3 class="text-center mb-4">DataPolitik</h3>
+        <p class="text-muted text-center small">Ingrese sus credenciales para continuar</p>
+        <div class="mb-3">
+            <label class="form-label">Documento de Identidad</label>
+            <input type="text" class="form-control" placeholder="Ej: 12345678">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Contraseña</label>
+            <input type="password" class="form-control" placeholder="••••••••">
+        </div>
+        <button onclick="simularLogin()" class="btn btn-primary w-100">Ingresar</button>
+        <hr>
+        <p class="text-center small">¿No tiene cuenta? <a href="#">Registrarse</a></p>
+    </div>
+
+    <div id="dashboard-section" class="container mt-5 dashboard-mock">
+        <nav class="navbar navbar-dark bg-primary mb-4 p-2 rounded shadow">
+            <span class="navbar-brand mb-0 h1">DataPolitik - Dashboard</span>
+            <button onclick="location.reload()" class="btn btn-sm btn-light">Salir</button>
+        </nav>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-white bg-success mb-3 shadow">
+                    <div class="card-body"><h5 class="card-title">Participación</h5><p class="card-text h2">74%</p></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-info mb-3 shadow">
+                    <div class="card-body"><h5 class="card-title">Censos Validados</h5><p class="card-text h2">1,240</p></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-warning mb-3 shadow">
+                    <div class="card-body"><h5 class="card-title">Alertas</h5><p class="card-text h2">3</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white p-4 border rounded shadow-sm mt-4">
+            <h5>Resultados Electorales (Consolidado)</h5>
+            <table class="table table-striped mt-3">
+                <thead><tr><th>Candidato</th><th>Votos</th><th>%</th></tr></thead>
+                <tbody>
+                    <tr><td>Candidato A</td><td>540</td><td>43.5%</td></tr>
+                    <tr><td>Candidato B</td><td>410</td><td>33.1%</td></tr>
+                    <tr><td>En Blanco</td><td>290</td><td>23.4%</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function simularLogin() {
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('dashboard-section').style.display = 'block';
+        }
+    </script>
+</body>
 </html>
